@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <title>Shaxik FF</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #0d0d0d;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background: #0d0d0d;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .header {
+      text-align: center;
+      padding: 50px 20px 30px;
+    }
+
+    .header h1 {
+      font-size: 3.5em;
+      color: #ff0000;
+      text-transform: uppercase;
+      text-shadow: 0 0 15px rgba(255, 0, 0, 0.8);
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
+      }
+      to {
+        text-shadow: 0 0 20px rgba(255, 0, 0, 1);
+      }
+    }
+
+    .about {
+      text-align: center;
+      font-size: 1.3em;
+      margin-bottom: 40px;
+      animation: fadeInUp 2s ease forwards;
+      opacity: 0;
+    }
+
+    @keyframes fadeInUp {
+      0% {
+        transform: translateY(30px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .catalog-button {
+      display: block;
+      margin: 0 auto 30px;
+      padding: 15px 30px;
+      background: #ff0000;
+      color: #fff;
+      border-radius: 12px;
+      font-size: 1.2em;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .catalog-button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(255, 0, 0, 0.7);
+    }
+
+    .catalog {
+      display: none;
+      margin-bottom: 40px;
+    }
+
+    .product {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 0, 0, 0.3);
+      border-radius: 15px;
+      padding: 20px;
+      margin-bottom: 20px;
+      transition: 0.4s ease;
+    }
+
+    .product h2 {
+      color: #ff0000;
+      margin-bottom: 10px;
+      font-size: 1.6em;
+      text-shadow: 0 0 5px rgba(255, 0, 0, 0.6);
+    }
+
+    .product p {
+      color: #ccc;
+      line-height: 1.6;
+    }
+
+    .product .buy-hint {
+      margin-top: 15px;
+      font-style: italic;
+      color: #ff8080;
+    }
+
+    .links {
+      text-align: center;
+      margin: 40px 0;
+    }
+
+    .links a {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 25px;
+      font-size: 1.1em;
+      color: #fff;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 0, 0, 0.3);
+      border-radius: 10px;
+      text-decoration: none;
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+    }
+
+    .links a:hover {
+      background: rgba(255, 255, 255, 0.1);
+      transform: scale(1.05);
+      box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px 0;
+      font-size: 0.9em;
+      color: #666;
+    }
+
+    @media (max-width: 768px) {
+      .header h1 {
+        font-size: 2.2em;
+      }
+      .about {
+        font-size: 1.1em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="particles-js"></div>
+  <div class="container">
+    <div class="header">
+      <h1>Shaxik FF</h1>
+    </div>
+
+    <div class="about">
+      <p>Создаю топовые софты, усилитель. Всё для твоей игры!</p>
+    </div>
+
+    <button class="catalog-button" onclick="document.querySelector('.catalog').style.display='block'; this.style.display='none';">
+      📂 Открыть Каталог Товаров
+    </button>
+
+    <div class="catalog">
+      <div class="product">
+        <h2>Soft iOS</h2>
+        <p><strong>Описание:</strong> Софт на iPhone без риска получения бана. Работает на одну обнову Free Fire. После покупки производится настройка под ваш аккаунт.</p>
+        <p><strong>⚙️ Функционал:</strong> Может изменяться с каждой обновой.</p>
+        <p><strong>Цена:</strong> 800₽ / 10$</p>
+        <p class="buy-hint">Чтобы купить, пишите в Telegram. Нажмите на кнопку "Связаться со мной" ниже 👇🏻</p>
+      </div>
+
+      <div class="product">
+        <h2>Panel PC</h2>
+        <p><strong>Описание:</strong> Доступны разные виды панелей.</p>
+        <p><strong>Средняя цена:</strong> 350₽ за неделю / 800₽ навсегда</p>
+        <p class="buy-hint">Чтобы купить, пишите в Telegram. Нажмите на кнопку "Связаться со мной" ниже 👇🏻</p>
+      </div>
+    </div>
+
+    <div class="links">
+      <a href="https://t.me/s7evx">💬 Связаться со мной (Telegram)</a>
+      <a href="https://t.me/shaxiktt">📢 Telegram-канал</a>
+      <a href="https://youtube.com/@shaxikff?si=DTvZO4J-ySaimDu4">▶ YouTube: shaxik.ff-</a>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 Shaxik FF. Все права защищены.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script>
+    particlesJS('particles-js', {
+      particles: {
+        number: { value: 80, density: { enable: true, value_area: 800 } },
+        color: { value: '#ff0000' },
+        shape: { type: 'circle' },
+        opacity: { value: 0.5, random: true },
+        size: { value: 3, random: true },
+        line_linked: {
+          enable: true,
+          distance: 150,
+          color: '#ff0000',
+          opacity: 0.4,
+          width: 1
+        },
+        move: { enable: true, speed: 3 }
+      },
+      interactivity: {
+        detect_on: 'canvas',
+        events: {
+          onhover: { enable: true, mode: 'repulse' },
+          onclick: { enable: true, mode: 'push' }
+        },
+        modes: {
+          repulse: { distance: 100 },
+          push: { particles_nb: 4 }
+        }
+      },
+      retina_detect: true
+    });
+
+    // 120Hz адаптация
+    if (window.matchMedia("(min-refresh-rate: 120)").matches) {
+      document.body.style.scrollBehavior = "smooth";
+    }
+  </script>
+</body>
+</html>
